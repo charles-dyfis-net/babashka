@@ -260,6 +260,7 @@ Use bb run --help to show this help output.
  :feature/java-time  %s
  :feature/xml        %s
  :feature/yaml       %s
+ :feature/jq         %s
  :feature/jdbc       %s
  :feature/postgresql %s
  :feature/sqlite %s
@@ -280,6 +281,7 @@ Use bb run --help to show this help output.
     features/java-time?
     features/xml?
     features/yaml?
+    features/jq?
     features/jdbc?
     features/postgresql?
     features/sqlite?
@@ -339,6 +341,7 @@ Use bb run --help to show this help output.
      async clojure.core.async}
     features/xml?        (assoc 'xml 'clojure.data.xml)
     features/yaml?       (assoc 'yaml 'clj-yaml.core)
+    features/jq?         (assoc 'jq 'jq.api)
     features/jdbc?       (assoc 'jdbc 'next.jdbc)
     features/csv?        (assoc 'csv 'clojure.data.csv)
     features/transit?    (assoc 'transit 'cognitect.transit)))
@@ -430,6 +433,7 @@ Use bb run --help to show this help output.
                           'clojure.data.xml.tree @(resolve 'babashka.impl.xml/xml-tree-namespace))
     features/yaml? (assoc 'clj-yaml.core @(resolve 'babashka.impl.yaml/yaml-namespace)
                           'flatland.ordered.map @(resolve 'babashka.impl.ordered/ordered-map-ns))
+    features/jq? (assoc 'jq.api @(resolve 'babashka.impl.jq/jq-namespace))
     features/jdbc? (assoc 'next.jdbc @(resolve 'babashka.impl.jdbc/njdbc-namespace)
                           'next.jdbc.sql @(resolve 'babashka.impl.jdbc/next-sql-namespace)
                           'next.jdbc.result-set @(resolve 'babashka.impl.jdbc/result-set-namespace))

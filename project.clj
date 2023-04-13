@@ -48,6 +48,8 @@
                                            [org.flatland/ordered "1.5.9"]]}
              :feature/jdbc {:source-paths ["feature-jdbc"]
                             :dependencies [[seancorfield/next.jdbc "1.1.610"]]}
+             :feature/jq {:source-paths ["feature-jq"]
+                          :dependencies [[lt.jocas/clj-jq "1.2.1"]]}
              :feature/sqlite [:feature/jdbc {:dependencies [[org.xerial/sqlite-jdbc "3.36.0.3"]]}]
              :feature/postgresql [:feature/jdbc {:dependencies [[org.postgresql/postgresql "42.2.18"]]}]
              ;:feature/oracledb [:feature/jdbc {:dependencies [[com.oracle.database.jdbc/ojdbc8 "19.8.0.0"]]}]
@@ -83,6 +85,7 @@
              :test [:feature/xml
                     :feature/lanterna
                     :feature/yaml
+                    :feature/jq
                     :feature/postgresql
                     :feature/hsqldb
                     :feature/csv

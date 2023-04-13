@@ -28,6 +28,7 @@
 (def lanterna? (= "true" (System/getenv "BABASHKA_FEATURE_LANTERNA")))
 (def spec-alpha? (= "true" (System/getenv "BABASHKA_FEATURE_SPEC_ALPHA")))
 (def rrb-vector? (= "true" (System/getenv "BABASHKA_FEATURE_RRB_VECTOR")))
+(def jq? (= "true" (System/getenv "BABASHKA_FEATURE_JQ")))
 
 (when xml?
   (require '[babashka.impl.xml]))
@@ -35,6 +36,9 @@
 (when yaml?
   (require '[babashka.impl.yaml]
            '[babashka.impl.ordered]))
+
+(when jq?
+  (require '[babashka.impl.jq]))
 
 (when jdbc?
   (require '[babashka.impl.jdbc]))

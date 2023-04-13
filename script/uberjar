@@ -28,6 +28,13 @@ fi
 
 BABASHKA_LEIN_PROFILES="+uberjar"
 
+if [ "$BABASHKA_FEATURE_JQ" = "true" ]
+then
+    BABASHKA_LEIN_PROFILES+=",+feature/jq"
+else
+    BABASHKA_LEIN_PROFILES+=",-feature/jq"
+fi
+
 if [ "$BABASHKA_FEATURE_JDBC" = "true" ]
 then
     BABASHKA_LEIN_PROFILES+=",+feature/jdbc"
